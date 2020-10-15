@@ -31,7 +31,7 @@ class SongAdapter @Inject constructor(
 
     var songs: List<Song>
         get() = differ.currentList
-    set(value) = differ.submitList(value)
+        set(value) = differ.submitList(value)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         return SongViewHolder(
@@ -49,7 +49,7 @@ class SongAdapter @Inject constructor(
             tvSecondary.text = song.subtitle
             glide.load(song.imageUrl).into(ivItemImage)
 
-            setOnClickListener{
+            setOnClickListener {
                 onItemClickListener?.let { click ->
                     click(song)
                 }
@@ -57,9 +57,9 @@ class SongAdapter @Inject constructor(
         }
     }
 
-    private var onItemClickListener:((Song) -> Unit)? = null
+    private var onItemClickListener: ((Song) -> Unit)? = null
 
-    fun setOnItemClickListener (listener:(Song) -> Unit){
+    fun setOnItemClickListener(listener: (Song) -> Unit) {
         onItemClickListener = listener
     }
 
