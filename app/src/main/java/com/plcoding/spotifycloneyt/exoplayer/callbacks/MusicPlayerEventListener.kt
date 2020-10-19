@@ -7,16 +7,16 @@ import com.plcoding.spotifycloneyt.exoplayer.MusicService
 
 class MusicPlayerEventListener(
     private val musicService: MusicService
-): Player.EventListener {
+) : Player.EventListener {
     override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
         super.onPlayerStateChanged(playWhenReady, playbackState)
-        if (playbackState == Player.STATE_READY && ! playWhenReady){
+        if (playbackState == Player.STATE_READY && !playWhenReady) {
             musicService.stopForeground(false)
         }
     }
 
     override fun onPlayerError(error: ExoPlaybackException) {
         super.onPlayerError(error)
-        Toast.makeText(musicService, "An unknown error " , Toast.LENGTH_SHORT).show()
+        Toast.makeText(musicService, "An unknown error ", Toast.LENGTH_SHORT).show()
     }
 }

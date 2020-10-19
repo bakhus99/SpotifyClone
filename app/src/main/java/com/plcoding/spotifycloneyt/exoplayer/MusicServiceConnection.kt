@@ -38,7 +38,7 @@ class MusicServiceConnection(context: Context) {
             MusicService::class.java
         ),
         mediaBrowserConnectionCallback, null
-    ).apply { connect()}
+    ).apply { connect() }
 
     val transportControls: MediaControllerCompat.TransportControls
         get() = mediaController.transportControls

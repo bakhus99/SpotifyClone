@@ -53,9 +53,9 @@ class MusicService : MediaBrowserServiceCompat() {
 
     private lateinit var musicEventListener: MusicPlayerEventListener
 
-    companion object{
+    companion object {
         var curSongDuration = 0L
-        private set
+            private set
     }
 
     override fun onCreate() {
@@ -159,7 +159,7 @@ class MusicService : MediaBrowserServiceCompat() {
                             isPlayerInitialized = true
                         }
                     } else {
-                        mediaSession.sendSessionEvent(NETWORK_ERROR,null)
+                        mediaSession.sendSessionEvent(NETWORK_ERROR, null)
                         result.sendResult(null)
                     }
                 }
